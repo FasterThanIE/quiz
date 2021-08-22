@@ -24,6 +24,9 @@ namespace Quiz
                 
                 Console.WriteLine("Answer is: "+validAnswer+". You have total of "+user.Points+" points");
             }
+            
+            Console.WriteLine("You have finished the quiz");
+            Console.ReadLine();
 
         }
     }
