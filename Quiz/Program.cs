@@ -13,7 +13,16 @@ namespace Quiz
             {
                 string randomQuestion = questions.GetRandomQuestion();
                 Console.WriteLine(randomQuestion);
-                Console.WriteLine();
+                
+                string answer = Console.ReadLine().ToLower();
+                bool validAnswer = questions.IsAnswerValid(questions.QuestionId, answer);
+
+                if (validAnswer)
+                {
+                    user.Points += 1;
+                }
+                
+                Console.WriteLine("Answer is: "+validAnswer+". You have total of "+user.Points+" points");
             }
 
         }

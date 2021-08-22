@@ -7,32 +7,29 @@ namespace Quiz
     {
         public static int MAX_NUMBER_OF_POINTS = 10;
         
-        private int QuestionId { get; set; }
+        public int QuestionId { get; set; }
         private List<int> AnsweredQuestion = new List<int>();
+        
+        private string[] questions = new string[]
+        {
+            "What is 2+2\nA: 4\nB: 5\nC: 12",
+            "What is 2+3\nA: 4\nB: 5\nC: 12",
+        };
+        
+        private string[] answers = new string[] {"a", "b"};
 
         public string GetRandomQuestion()
         {
-            string[] questions = new string[]
-            {
-                "What is 2+2\nA: 4\nB: 5\nC: 12",
-                "What is 2+3",
-            };
-
             Random rnd = new Random();
             QuestionId = rnd.Next(questions.Length);
             AnsweredQuestion.Add(QuestionId);
 
-            Console.WriteLine(QuestionId);
-                
             return questions[QuestionId];
         }
 
-        private bool IsAnswerValid(int questionId, int answerId)
+        public bool IsAnswerValid(int questionId, string answer)
         {
-            string[] answers = new string[] {"a", "b"};
-            
-            // TODO: Add logic
-            return true;
+            return answers[questionId] == answer;
         }
     }
 }
