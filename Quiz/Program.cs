@@ -6,7 +6,12 @@ namespace Quiz
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello world");
+            Questions questions = new Questions();
+            
+            Console.WriteLine(questions.GetRandomQuestion());
+            Console.ReadLine();
+            Console.WriteLine("S");
+            Console.ReadLine();
         }
     }
 }
